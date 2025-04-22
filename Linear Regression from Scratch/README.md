@@ -14,46 +14,43 @@ A custom-built class that mimics the functionality of linear regression in libra
 
 ### 1. 🛠️ **Initialization: `__init__` method**
 
+The constructor initializes key hyperparameters:
+
+- **`lr`**: Learning rate — controls the step size during gradient descent.
+- **`n_iters`**: Number of iterations — how many times weights and bias will be updated.
+
 ```python
 def __init__(self, lr=0.001, n_iters=1000):
-lr: Learning rate — controls the step size during gradient descent.
-
-n_iters: Number of iterations — how many times weights and bias will be updated.
-
-self.weight and self.bias: Initialized later during training in fit().
-
-##2. 📉 Training: fit method
-
-def fit(self, X, y):
+    self.lr = lr
+    self.n_iters = n_iters
+    self.weight = None
+    self.bias = None
+2. 📉 Training: fit method
 🔹 Input:
 X: Feature matrix (shape: [n_samples, n_features])
 
 y: Target values (shape: [n_samples])
 
 🔹 Steps:
-#Initialize weights and bias:
+Initialize weights and bias:
 self.weight = np.zeros(n_features)
 self.bias = 0
 
-#Forward Pass and Gradient Calculation:
+Forward Pass and Gradient Calculation:
 y_pred = np.dot(X, self.weight) + self.bias
 dw = (1 / n_samples) * np.dot(X.T, (y_pred - y))
 db = (1 / n_samples) * np.sum(y_pred - y)
 
-#Gradient Descent (Weight Update):
+Gradient Descent (Weight Update):
 self.weight -= self.lr * dw
 self.bias -= self.lr * db
 This loop runs for n_iters steps to minimize the Mean Squared Error (MSE).
 
-##3. 🎯 Prediction: predict method
-
+3. 🎯 Prediction: predict method
+Returns predictions based on learned weights and bias:
 def predict(self, X):
     return np.dot(X, self.weight) + self.bias
-Takes a matrix of new features X
-
-Returns predicted values using the learned weight and bias
-
-##🧠 Concept Behind the Algorithm
+🧠 Concept Behind the Algorithm
 Linear Regression finds the best-fit line by minimizing the difference between predicted values and actual values — typically using Mean Squared Error (MSE).
 This implementation uses Gradient Descent to update the model's parameters step-by-step toward the optimal solution.
 
@@ -80,16 +77,12 @@ plt.scatter(X_test, y_test, color='blue', label='Actual')
 plt.plot(X_test, predictions, color='red', label='Predicted')
 plt.legend()
 plt.show()
-
-
-##🧾 Key Takeaways
-#✅ Built completely from scratch using NumPy
+🧾 Key Takeaways
+✅ Built completely from scratch using NumPy
 
 🔍 Offers a clear view of how gradient descent works in linear regression
 
 ⚙️ Code is modular, clean, and extendable
 
 🧠 Great for learning core ML concepts like optimization and error minimization
-
-📌 If you found this useful, give the repo a ⭐ and stay tuned for more machine learning algorithms from scratch!
 
