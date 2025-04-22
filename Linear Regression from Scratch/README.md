@@ -16,7 +16,7 @@ def __init__(self, lr=0.001, n_iters=1000):
     self.lr = lr          # Learning rate (step size for gradient descent)
     self.n_iters = n_iters # Number of training iterations
     self.weight = None     # Model weights (coefficients)
-    self.bias = None       # Bias term (intercept)
+    self.bias = None       # Bias term (intercept)  python```
 
 📊 Training (fit method)
 Input:
