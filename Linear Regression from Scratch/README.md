@@ -88,7 +88,6 @@ plt.show()
 ```
 
 Output:
-Linear Regression Fit (Replace with real plot)
 <img width="583" alt="image" src="https://github.com/user-attachments/assets/17cf0b81-3a27-4d00-bd88-405dedd41617" />
 
 
