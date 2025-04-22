@@ -22,10 +22,8 @@ n_iters: Number of iterations — how many times weights and bias will be update
 
 self.weight and self.bias: Initialized later during training in fit().
 
-2. 📉 Training: fit method
-python
-Copy
-Edit
+##2. 📉 Training: fit method
+
 def fit(self, X, y):
 🔹 Input:
 X: Feature matrix (shape: [n_samples, n_features])
@@ -33,48 +31,33 @@ X: Feature matrix (shape: [n_samples, n_features])
 y: Target values (shape: [n_samples])
 
 🔹 Steps:
-Initialize weights and bias:
-
-python
-Copy
-Edit
+#Initialize weights and bias:
 self.weight = np.zeros(n_features)
 self.bias = 0
-Forward Pass and Gradient Calculation:
 
-python
-Copy
-Edit
+#Forward Pass and Gradient Calculation:
 y_pred = np.dot(X, self.weight) + self.bias
 dw = (1 / n_samples) * np.dot(X.T, (y_pred - y))
 db = (1 / n_samples) * np.sum(y_pred - y)
-Gradient Descent (Weight Update):
 
-python
-Copy
-Edit
+#Gradient Descent (Weight Update):
 self.weight -= self.lr * dw
 self.bias -= self.lr * db
 This loop runs for n_iters steps to minimize the Mean Squared Error (MSE).
 
-3. 🎯 Prediction: predict method
-python
-Copy
-Edit
+##3. 🎯 Prediction: predict method
+
 def predict(self, X):
     return np.dot(X, self.weight) + self.bias
 Takes a matrix of new features X
 
 Returns predicted values using the learned weight and bias
 
-🧠 Concept Behind the Algorithm
+##🧠 Concept Behind the Algorithm
 Linear Regression finds the best-fit line by minimizing the difference between predicted values and actual values — typically using Mean Squared Error (MSE).
 This implementation uses Gradient Descent to update the model's parameters step-by-step toward the optimal solution.
 
 🧪 Example Usage
-python
-Copy
-Edit
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import make_regression
 import matplotlib.pyplot as plt
@@ -97,8 +80,10 @@ plt.scatter(X_test, y_test, color='blue', label='Actual')
 plt.plot(X_test, predictions, color='red', label='Predicted')
 plt.legend()
 plt.show()
-🧾 Key Takeaways
-✅ Built completely from scratch using NumPy
+
+
+##🧾 Key Takeaways
+#✅ Built completely from scratch using NumPy
 
 🔍 Offers a clear view of how gradient descent works in linear regression
 
@@ -108,10 +93,3 @@ plt.show()
 
 📌 If you found this useful, give the repo a ⭐ and stay tuned for more machine learning algorithms from scratch!
 
-yaml
-Copy
-Edit
-
----
-
-Would you like me to also help generate the actual `linear_regression.py` file to go with this?
