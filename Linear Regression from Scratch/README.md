@@ -25,7 +25,8 @@ def __init__(self, lr=0.001, n_iters=1000):
     self.n_iters = n_iters
     self.weight = None
     self.bias = None
-2. 📉 Training: fit method
+
+## **'2. 📉 Training: fit method'**
 🔹 Input:
 X: Feature matrix (shape: [n_samples, n_features])
 
