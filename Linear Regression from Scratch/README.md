@@ -11,12 +11,13 @@ This project implements Linear Regression from the ground up using only NumPy, d
 A custom-built class that replicates the functionality of scikit-learn's LinearRegression, with full control over the training process.
 
 🔧 Initialization
-python
+```python
 def __init__(self, lr=0.001, n_iters=1000):
     self.lr = lr          # Learning rate (step size for gradient descent)
     self.n_iters = n_iters # Number of training iterations
     self.weight = None     # Model weights (coefficients)
     self.bias = None       # Bias term (intercept)
+
 📊 Training (fit method)
 Input:
 
