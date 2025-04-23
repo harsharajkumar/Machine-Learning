@@ -98,7 +98,6 @@ print("Predicted class:", predictions)
 
 # 💾 Installation
 You only need numpy to run this project:
-```
-bash
+``` bash
 pip install numpy
 ```
